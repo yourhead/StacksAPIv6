@@ -23,7 +23,7 @@ author:
 
 git_host:            github.com
 git_host_user:       yourhead
-git_project:         StacksAPI
+git_project:         StacksAPIv6
 git_branch:          gh-pages
 
 
