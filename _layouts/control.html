@@ -1,0 +1,70 @@
+---
+layout: default
+---
+
+<div class='fixed'>
+<div class='row'>
+<header>
+{% include sidebar-top.html %}	
+
+<h3>{{ page.name }} &mdash; <code>{{page.type}}</code></h3>
+<ul>
+{% if page.properties %}
+<small>{{ page.name }}</small>
+{% for property in page.properties %}
+<li>
+	<a href='#{{ property.key }}'>{{ property.title }}</a>
+	<a href='#{{ property.key }}'><code>{{ property.key }}</code></a>
+</li>
+{% endfor %}
+<br>
+{% endif %}
+
+{% if page.generics %}
+<small>Basic</small>
+{% for property in site.data.properties-basic %}
+<li>
+	<a href='#{{ property.key }}'>{{ property.title }}</a>
+	<a href='#{{ property.key }}'><code>{{ property.key }}</code></a>
+</li>
+{% endfor %}
+{% endif %}
+
+</ul>
+{% include sidebar-bottom.html %}	
+</header>
+</div>
+</div>
+
+
+<div class='row'>
+<section>
+ 
+
+
+<h2>{{ page.name }} &mdash; <code>{{page.type}}</code></h2>
+<h3>Overview</h3>
+
+<ul class='propertyList'>
+<li><span class='propertyTitle'>Type:</span><code>{{ page.type }}</code></li>
+<li><span class='propertyTitle'>Output Value:</span><code>{{ page.value }}</code></li>
+</ul>
+
+{{ content }}
+
+{% if page.available %}<h5><i>Available: Stacks API v{{ page.available }}</i></h5>{% endif %}
+
+<hr>
+
+{% for property in page.properties %}
+{% include property.html %}
+{% endfor %}
+
+{% if page.generics %}
+{% for property in site.data.properties-basic %}
+{% include property.html %}
+{% endfor %}
+{% endif %}
+
+</section>
+</div>

@@ -1,0 +1,73 @@
+
+url:                  "http://api.yourhead.com"
+baseurl:              "http://yourhead.github.io/StacksAPIv6"
+reloader:             NO
+github:               [Repository metadata]
+
+
+# Everything below here should be identical in both local and github setups
+
+safe:                true      # enable safe mode to match github pages
+permalink:           pretty    # make prettty link
+relative_permalinks: true
+highlighter:         pygments
+markdown:            redcarpet
+
+title:               Stacks API
+tagline:             Come build with us.
+version:             6
+stacksVersion:       2.5
+author:
+  name:              YourHead Software
+  url:               http://yourhead.com
+
+
+git_host:            github.com
+git_host_user:       yourhead
+git_project:         StacksAPI
+git_branch:          gh-pages
+
+
+
+# sass needs to be be setup for some lame reason
+sass:
+  sass_dir:          _sass
+  style:             :compressed
+
+
+# Collections -- seriously, couldn't this just the be default
+collections:
+  keys:
+      output: true
+  controls:
+      output: true
+  templates:
+      output: true
+  
+
+# Default layouts for various things
+defaults:
+  - scope:
+      path: ""
+      type: "controls"
+    values:
+      layout: "control"
+      back: 
+        - plist: "controls"
+      layout: "control"
+  - scope:
+      path: ""
+      type: "keys"
+    values:
+      layout: "key"
+      back: 
+        - top: "/plist"
+  - scope:
+      path: ""
+      type: "templates"
+    values:
+      layout: "template"
+      back: 
+        - top: "/templates"
+
+

@@ -1,0 +1,52 @@
+---
+layout: default
+links:
+  - top: /plist
+---
+
+
+
+
+<div class='fixed'>
+<div class='row'>
+	<header>
+{% include sidebar-top.html %}
+
+<h3>{{ page.name }} &mdash; {% if page.humanReadableKey %}{{ page.humanReadableKey }}{% else %}{{ page.key }}{% endif %}</h3>
+
+{% include sidebar-bottom.html %}	
+</header>
+</div>
+</div>
+
+
+<div class='row'>
+	<section>
+
+
+
+
+
+ 
+
+
+<h2>{{ page.name }} &mdash; <code>{{page.key}}</code></h2>
+
+<ul class='propertyList'>
+<li><span class='propertyTitle'>Key:</span><code>{{ page.key }}</code></li>
+{% if page.humanReadableKey %}<li><span class='propertyTitle'>Readable Key:</span><code>{{ page.humanReadableKey }}</code></li>{% endif %}
+<li><span class='propertyTitle'>Type:</span><code>{{ page.type }}</code></li>
+{% if page.value %}<li><span class='propertyTitle'>Value:</span><code>{{ page.value }}</code></li>{% endif %}
+{% if page.required %}<li><span class='propertyTitle'>Required</span></li>{% endif %}
+</ul>
+
+<hr>
+
+{{ content }}
+
+{% if page.available %}<h5><i>Available: Stacks API v{{ page.available }}</i></h5>{% endif %}
+
+<hr>
+
+</section>
+</div>

@@ -1,0 +1,6 @@
+{% if page.collection %}
+	{% assign newPath = page.relative_path %}
+{% else %}
+	{% assign newPath = page.path %}
+{% endif %}
+https://{{site.git_host}}/{{site.git_host_user}}/{{site.git_project}}/blob/{{site.git_branch}}/{{newPath}}
